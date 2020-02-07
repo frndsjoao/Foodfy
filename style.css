@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background-color: #ffffff;
+    margin: 30px 280px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*** HEADER ***/
+header {
+    padding: 10px;
+    background: #ffffff;
+    font-size: 16px;
+}
+.links img {
+    height: 27px;
+    margin: 0 90px 0 0;
+    position: relative;
+    top: 5px;
+}
+
+.links a {
+    margin: 0 30px;
+    position: relative;
+    bottom:5px;
+    text-decoration: none;
+    color: #111111;
+
+}
+
+.links a:hover {
+    font-weight: bold;
+    transition: color 100ms;
+}
+
+/*** MAIN DESCRIPTION ***/
+.description {
+    background-color: #FBDFDB;
+    margin-top: 20px;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#description-text h1 {
+    font-family: 'Roboto-bold', sans-serif;
+    font-size: 32px;
+    padding: 100px 60px 10px 80px;
+}
+
+#description-text p {
+    font-size: 18px;
+    opacity: 0.7;
+    padding: 0 90px 130px 80px;
+}
+
+.description img {
+    position: relative;
+    top: 60px;
+    left: 140px;
+    bottom: 0px;
+    height: 280px;
+}
+
+/*** BODY RECIPES ***/
+
+#content h2 {
+    padding: 30px 0;
+    font-size: 24px;
+    color: #111111;
+    font-family: 'Roboto-bold', sans-serif;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card_img img {
+    height: 140px;
+    border-radius: 15px;
+}
+
+.card_title {
+    font-size: 18px;
+    color: #111111;
+    padding: 15px 0 5px 0;
+}
+
+.card_info {
+    font-size: 14px;
+    color: #777777;
+    padding: 0 0 20px 0;
+}
+
+/*** FOOTER ***/
+.footer-bar {
+    background-color: #eeeeee;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.footer-bar p{
+    text-align: center;
+    font-size: 14px;
+    color: #999
+}
+
+
+/*** ABOUT-PAGE ***/
+#content p {
+    color: #444444;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+#content h3 {
+    padding: 20px 0 15px 0;
+    font-size: 20px;
+    color: #111111;
+    font-family: 'Roboto-bold', sans-serif;
+}
