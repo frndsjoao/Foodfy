@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        {% block head %}
+            <title>Foodfy</title>
+        {% endblock %}
+        <link href="/style.css" rel="stylesheet">
+    </head>
+
+
+    <body>
+        <header>
+            <div class="links">
+                <a href="/"><img src="/logo.png" alt="Foodfy-logo"></a>
+                <a href="/sobre">Sobre</a>
+                <a href="/receitas">Receitas</a>
+            </div>
+        </header>
+
+        {% block content %}
+        {% endblock %}
+
+        <footer class="footer-bar">
+            <p>Todos os direitos reservados. Receitas Foodfy.</p>
+        </footer>
+
+    </body>
+
+</html>

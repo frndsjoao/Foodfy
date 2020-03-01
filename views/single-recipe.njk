@@ -1,0 +1,45 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="recipe-title" id="{{items.id}}">
+        <img src="{{items.image}}">
+        <h1>{{items.title}}</h1>
+        <p>por {{items.author}}</p>
+    </div>
+
+    <section class="recipe-content">
+        <div class="ingredients">
+            <h3>Ingredientes <button class="show-btn hide-">Esconder</button></h3>
+            <div class="content0">
+                <ul>{% for line in items.ingredients %}
+                    <li>{{ line }}</li>
+                {% endfor %}</ul>
+            </div>
+        </div>
+
+        <div class="prepare">
+            <h3>Modo de preparo <button class="show-btn">Esconder</button></h3>
+            <div class="content1">
+                {% for line in items.preparation %}
+                    <p>{{ line }}</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="informations">
+            <h3>Informações adicionais <button class="show-btn">Esconder</button></h3>
+            <div class="content2">
+                <p>{{items.information | striptags(true) | escape | nl2br }}</p>
+            </div>
+        </div>
+
+    </section>
+
+<script src="/scripts.js"></script>
+
+{% endblock %}
+
+
+            <!--p>{{items.ingredients | join("\n • ") | striptags(true) | escape | nl2br }}</p-->
+            <!--p>{{items.preparation | join("\n") | striptags(true) | escape | nl2br }}</p-->
