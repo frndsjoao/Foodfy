@@ -9,82 +9,19 @@
     <div id="content"><h2> </h2></div>
     
     <section class="cards">
+        {% for item in items %}
         <div class="card">
             <div class="card_img">
-                <img src="asinhas.png" alt="Receita">
+                <img src={{item.avatar}} alt="Receita">
             </div>
             <div class="card_title">
-                <p>Asinhas de Frango ao barbecue</p>
+                <p>{{item.title}}</p>
             </div>
             <div class="card_info">
-                <p>por Vania Steroski</p>
-            </div>
-
-        </div>
-
-        <div class="card">
-            <div class="card_img">
-                <img src="burger.png" alt="Receita">
-            </div>
-            <div class="card_title">
-                <p>Triplo bacon burger</p>
-            </div>
-            <div class="card_info">
-                <p>por Jorge Relato</p>
-            </div>
-
-        </div>
-
-        <div class="card">
-            <div class="card_img">
-                <img src="doce.png" alt="Receita">
-            </div>
-            <div class="card_title">
-                <p>Docinhos pão-do-céu</p>
-            </div>
-            <div class="card_info">
-                <p>por Ricardo Gouvea</p>
-            </div>
-
-        </div>
-
-        <div class="card">
-            <div class="card_img">
-                <img src="espaguete.png" alt="Receita">
-            </div>
-            <div class="card_title">
-                <p>Espaguete ao alho</p>
-            </div>
-            <div class="card_info">
-                <p>por Júlia Kinoto</p>
-            </div>
-
-        </div>
-
-        <div class="card">
-            <div class="card_img">
-                <img src="lasanha.png" alt="Receita">
-            </div>
-            <div class="card_title">
-                <p>Lasanha mac'n' cheese</p>
-            </div>
-            <div class="card_info">
-                <p>por Juliano Vieira</p>
-            </div>
-
-        </div>
-
-        <div class="card">
-            <div class="card_img">
-                <img src="pizza.png" alt="Receita">
-            </div>
-            <div class="card_title">
-                <p>Pizza 4 estações</p>
-            </div>
-            <div class="card_info">
-                <p>por Fabiana Melo</p>
+                <p>por {{item.author}}</p>
             </div>
         </div>
+        {% endfor %}
 
     </section>
 

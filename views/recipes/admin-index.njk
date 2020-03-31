@@ -1,0 +1,31 @@
+{% extends './admin-layout.njk' %}
+
+{% block content %}
+
+    <div class="admin-container">
+        <h2>Gerenciar Receitas</h2>
+
+        <section class="admin-cards">
+            {% for item in items %}
+            
+            <div class="card">
+                <div class="card_img">
+                    <img src=../{{item.avatar}} alt="Receita">
+                </div>
+                <section class="card-content">
+                    <div class="card_title">
+                        <p>{{item.title}}</p>
+                    </div>
+                    <div class="card_info">
+                        <p>por {{item.author}}</p>
+                    </div>
+                    <button id="show">Visualizar</button>
+                </section>
+            </div>
+            
+            {% endfor %}
+        </section>
+
+    </div>
+
+{% endblock %}
