@@ -7,37 +7,32 @@
 {% block content %}
 
     <div class="recipe-title" id="{{recipe.id}}">
-        <img src="{{recipe.image}}">
+        <img class="teste" src="{{recipe.image}}">
         <h1>{{recipe.title}}</h1>
         <p>por {{recipe.author}}</p>
     </div>
 
     <section class="recipe-content">
-        <div class="ingredients">
-            <h3>Ingredientes <button class="show-btn hide-">Esconder</button></h3>
-            <div class="content0">
-                <ul>{% for line in recipe.ingredients %}
+            <h3>Ingredientes <button class="visibility">ESCONDER</button></h3>
+            <div class="recipe-info">
+                <ul style="padding-left:20px;">{% for line in recipe.ingredients %}
                     <li>{{ line }}</li>
                 {% endfor %}</ul>
             </div>
-        </div>
 
-        <div class="prepare">
-            <h3>Modo de preparo <button class="show-btn">Esconder</button></h3>
-            <div class="content1">
+            <h3>Modo de preparo <button class="visibility">ESCONDER</button></h3>
+            <div class="recipe-info">
                 {% for line in recipe.preparation %}
-                    <p>{{ line }}</p>
+                    <p>- {{ line }}</p>
                 {% endfor %}
             </div>
-        </div>
 
-        <div class="informations">
-            <h3>Informações adicionais <button class="show-btn">Esconder</button></h3>
-            <div class="content2">
-                <p>{{recipe.information}}</p>
+            <h3>Informações adicionais <button class="visibility">ESCONDER</button></h3>
+            <div class="recipe-info">
+                <p>{{ recipe.information | striptags(true) | escape | nl2br }} </p>
             </div>
-        </div>
 
     </section>
+
 
 {% endblock %}
