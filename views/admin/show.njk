@@ -1,10 +1,15 @@
-{% extends "users/layout.njk" %}
+{% extends "admin/layout.njk" %}
 
 {% block head %}
-    <title>{{recipe.title}}</title>
+    <title>Admin - {{recipe.title}}</title>
 {% endblock %}
 
 {% block content %}
+
+    <div class="admin-title__show">
+        <h2 id="page-title__cards">Receita: {{recipe.title}}</h2>
+        <a href="recipes/{{recipe.id}}/edit">Editar receita</a>
+    </div>
 
     <div class="recipe-title" id="{{recipe.id}}">
         <img class="teste" src="{{recipe.image}}">
@@ -13,21 +18,21 @@
     </div>
 
     <section class="recipe-content">
-        <h3>Ingredientes <button class="visibility">ESCONDER</button></h3>
+        <h3>Ingredientes</h3>
         <div class="recipe-info">
-            <ul>{% for line in recipe.ingredients %}
+            <ul style="padding-left:20px;">{% for line in recipe.ingredients %}
                 <li>{{ line }}</li>
             {% endfor %}</ul>
         </div>
 
-        <h3>Modo de preparo <button class="visibility">ESCONDER</button></h3>
+        <h3>Modo de preparo</h3>
         <div class="recipe-info">
             {% for line in recipe.preparation %}
                 <p>- {{ line }}</p>
             {% endfor %}
         </div>
 
-        <h3>Informações adicionais <button class="visibility">ESCONDER</button></h3>
+        <h3>Informações adicionais</h3>
         <div class="recipe-info">
             <p>{{ recipe.information | striptags(true) | escape | nl2br }} </p>
         </div>

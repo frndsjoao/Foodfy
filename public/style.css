@@ -89,7 +89,7 @@ header a:hover {
     right: 10vw;
 }
 
-#most-accessed {
+#page-title__cards {
     font-size: 24px;
     margin-top: 20px;
     font-weight: bold;
@@ -219,7 +219,110 @@ footer {
 }
 
 
+
+
+
 /*-- ADMIN INDEX --*/
 #admin-header {
     background-color: #111;
+    height: 80px;
+    margin-bottom: 50px;
+}
+
+.admin__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    column-gap: 30px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    min-width: 730px;
+}
+
+@media(max-width: 500px) {
+    .admin__cards {
+        grid-template-columns: 0.6fr;
+    }
+}
+
+.admin__cards .admin__card {
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    gap: 15px;
+}
+
+.admin-card_img img {
+    height: 80px;
+    border-radius: 8.57px;
+}
+
+.admin-card_title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.admin-card_author {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.admin__cards a {
+    font-size: 14px;
+    color: var(--purple);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*-- ADMIN RECIPE PAGE --*/
+.admin-title__show {
+    display: grid;
+    grid-template-columns: 1fr 136px;
+    margin-bottom: 20px;
+}
+
+.admin-title__show a {
+    align-self: center;
+    margin-top: 20px;
+    
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    background-color: var(--purple);
+    padding: 6px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/*-- ADMIN CREATE PAGE --*/
+.form-details h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.form-details input {
+    height: 48px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: normal;
+    padding-left: 20px;
+
+    margin-bottom: 10px;
+}
+
+.form-details input[name="information"] {
+    height: 250px;
+    margin-bottom: 50px;
+}
+
+.form-details button {
+    font-size: 16px;
+    color: var(--purple);
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #fff;
 }
