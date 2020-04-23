@@ -19,7 +19,7 @@ routes.get('/admin/recipes/create', admin.create)
 routes.get('/admin/recipes/:index', admin.show)
 //routes.get('/admin/recipes/:index/edit', admin.edit)
 
-routes.post('admin/recipes', admin.post)
+routes.post('/admin/recipes', admin.post)
 // routes.put('admin/recipes', admin.put)
 // routes.delete('admin/recipes', admin.delete)
 
