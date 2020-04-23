@@ -6,12 +6,13 @@
 
 {% block content %}
 
-    <div class="admin-title__show">
-        <h2 id="page-title__cards">Criando receita</h2>
-        <a href="recipes">Salvar receita</a>
-    </div>
 
-    <form action="/recipes" method="post">
+    <form action="/admin/recipes" method="POST">
+      <div class="admin-title__show">
+          <h2 id="page-title__cards">Criando receita</h2>
+          <button type="submit">Salvar receita</button>
+      </div>
+
       <section class="form-details">
 
         {% include 'admin/recipe-fields.njk' %}

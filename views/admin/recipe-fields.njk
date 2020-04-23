@@ -5,20 +5,20 @@
 
 <div class="recipe-author">
   <h3>Autor da receita</h3>
-  <input type="text" name="author" value="{{recipe.author}}">
+  <input type="text" name="author" value="{{recipes.author}}">
 </div>
 
 <div class="recipe-img">
   <h3>Imagem da receita</h3>
   <input type="url" name="image" placeholder="http://"
-   value="{{recipe.image}}">
+   value="{{recipes.image}}">
 </div>
 
 <div class="recipe-ingredients">
   <h3>Ingredientes</h3>
-  <div class="ingredients">
+  <div id="ingredients">
     <div class="ingredient">
-      <input type="text" name="ingredients[]" value="{{recipe.ingredients}}">
+      <input type="text" name="ingredients[]" value="{{recipes.ingredients}}">
     </div>
   </div>
   <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
@@ -26,13 +26,15 @@
 
 <div class="recipe-preparation">
   <h3>Modo de preparo</h3>
-  <div class="preparation">
-    <input type="text" name="preparation[]" value="{{recipe.preparation}}">
+  <div id="preparations">
+    <div class="preparation">
+      <input type="text" name="preparation[]" value="{{recipes.preparation}}">
+    </div>
   </div>
   <button type="button" class="add-prepare">Adicionar novo passo</button>
 </div>
 
 <div class="recipe-informations">
   <h3>Informações adicionais</h3>
-  <input type="text" name="information" value="{{recipe.information}}">
+  <input type="text" name="information" value="{{recipes.information}}">
 </div>
