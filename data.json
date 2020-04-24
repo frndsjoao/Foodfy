@@ -1,7 +1,7 @@
 {
   "recipes": [
     {
-      "id": 1,
+      "id": "1",
       "image": "/imgs/asinhas.png",
       "title": "Asinhas de frango ao barbecue",
       "author": "Vania Steroski",
@@ -60,8 +60,7 @@
       "preparation": [
         "Cozinhe a batata-doce numa panela de pressão, com meio litro de água, por cerca de 20 minutos. Descasque e passe pelo espremedor, ainda quente.",
         "Junte a manteiga,os ovos, o coco ralado,o açúcar, o Leite Moça e o fermento em pó, mexendo bem após cada adição.",
-        "Despeje em assadeira retangular média, untada e leve ao forno médio (180°C), por aproximadamente 45 minutos. Depois de frio, polvilhe, com o",
-        "açúcar de confeiteiro e corte em quadrados."
+        "Despeje em assadeira retangular média, untada e leve ao forno médio (180°C), por aproximadamente 45 minutos. Depois de frio, polvilhe, com o açúcar de confeiteiro e corte em quadrados."
       ],
       "information": ""
     },
@@ -138,11 +137,6 @@
         "Leve novamente ao forno até derreter a mussarela."
       ],
       "information": "Pizza de liquidificador é uma receita deliciosa e supersimples de preparar. Feita toda no liquidificador, ela é bem prática para o dia a dia. Aqui no TudoGostoso você também encontra diversas delícias práticas feitas no liquidificador: massa de panqueca, torta de frango de liquidificador, pão de queijo de liquidificador, bolo de banana, bolo de chocolate e muito mais!"
-    },
-    {},
-    {},
-    {
-      "id": 9
     }
   ]
 }

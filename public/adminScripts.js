@@ -33,8 +33,13 @@ document
 
 
 
+function confirmation(){ 
+  var deleteRecipe = confirm("Deseja realmente deletar essa receita?")
 
-
+  if(deleteRecipe == true){
+    window.location.href = "/admin/recipes"
+  }
+}
 
 
 

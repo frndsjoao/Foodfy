@@ -3,6 +3,7 @@
 :root {
     --salmon: #FBDFDB;
     --purple: #6558C3;
+    --red-warning: #DC4747;
 }
 
 * {
@@ -113,8 +114,11 @@ header a:hover {
 
 .card_img img {
     height: 140px;
+    width: 300px;
     border-radius: 15px;
     cursor: pointer;
+    object-fit: cover;
+    object-position: center;
 }
 
 .card_title {
@@ -252,8 +256,11 @@ footer {
 }
 
 .admin-card_img img {
+    width: 172px;
     height: 80px;
     border-radius: 8.57px;
+    object-fit: cover;
+    object-position: center; 
 }
 
 .admin-card_title {
@@ -315,7 +322,6 @@ footer {
     font-size: 16px;
     font-weight: normal;
     padding-left: 20px;
-
     margin-bottom: 10px;
 }
 
@@ -330,4 +336,15 @@ footer {
     font-weight: bold;
     text-decoration: none;
     background-color: #fff;
+}
+
+/*-- ADMIN EDIT PAGE --*/
+.admin-title__show#edit {
+    display: grid;
+    grid-template-columns: 1fr 100px 136px;
+    margin-bottom: 20px;
+}
+
+.admin-title__show .delete-btn {
+    background-color: var(--red-warning);
 }
