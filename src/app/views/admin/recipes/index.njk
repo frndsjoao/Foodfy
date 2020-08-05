@@ -7,14 +7,14 @@
 {% block content %}
 
     <div class="admin-title__show">
-        <h2 id="page-title__cards">Criando receita</h2>
+        <h2 id="page-title__cards">Gerenciar receitas</h2>
         <a href="/admin/recipes/create">Criar receita</a>
     </div>
 
     <section class="admin__cards">
         {% for recipe in recipes %}
 
-        <div class="admin__card" id="{{loop.index -1}}">
+        <div class="admin__card" id="{{recipe.id}}">
             <div class="admin-card_img">
                 <img src={{recipe.image}} alt="Receita">
             </div>
