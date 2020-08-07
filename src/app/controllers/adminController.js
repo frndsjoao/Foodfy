@@ -96,7 +96,7 @@ module.exports = {
     },
 
     chefEdit(req, res){
-        Chef.show(req.params.id, function(chef){
+        Chef.show_chef(req.params.id, function(chef){
             if(!chef) return res.send(`Chef not found!`)
 
             return res.render('admin/chefs/edit', { chef })

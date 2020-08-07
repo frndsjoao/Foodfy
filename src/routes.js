@@ -9,6 +9,7 @@ routes.get('/',users.home)
 routes.get('/sobre', users.about)
 routes.get('/receitas', users.recipes)
 routes.get('/receitas/:id', users.showRecipe)
+routes.get('/chefs', users.chefs)
 
 
 routes.get('/admin', (req, res) => { return res.redirect('/admin/recipes') })

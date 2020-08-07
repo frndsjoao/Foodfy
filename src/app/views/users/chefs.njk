@@ -1,0 +1,29 @@
+{% extends 'users/layout.njk' %}
+
+{% block head %}
+    <title>Foodfy - Chefs</title>
+{% endblock %}
+
+{% block content %}
+
+    <section class="chef__cards">
+        {% for chef in chefs %}
+
+        <div class="chef__card" id="{{loop.index -1}}">
+            <div class="chef-card_img">
+                <img src={{chef.avatar_url}}>
+            </div>
+            <section>
+                <div class="chef-card_title">
+                    <p>{{chef.name}}</p>
+                </div>
+                <div class="user_count-recipes">
+                    <p>{{chef.total_recipes}} receitas</p>
+                </div>
+            </section>
+        </div>
+
+        {% endfor %}
+    </section>
+
+{% endblock %}
