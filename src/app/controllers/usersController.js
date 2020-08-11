@@ -16,7 +16,6 @@ module.exports = {
         User.recipePage(function(recipes){
             return res.render('users/recipes', { recipes })
         })
-
     },
 
     showRecipe(req, res) {
@@ -32,4 +31,5 @@ module.exports = {
             return res.render('users/chefs', { chefs })
         })
     }
+
 }

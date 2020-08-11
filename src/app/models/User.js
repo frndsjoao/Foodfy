@@ -2,7 +2,10 @@ const db = require('../../config/db')
 
 module.exports = {
     mainPage(callback){
-        db.query(`SELECT * FROM recipes LIMIT 6`, function(err, results){
+        db.query(`SELECT recipes.*, chefs.name AS author
+                FROM recipes
+                LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+                LIMIT 6`, function(err, results){
             if(err) throw `Database error: ${err}`
             
             callback(results.rows)    
@@ -10,7 +13,9 @@ module.exports = {
     },
 
     recipePage(callback){
-        db.query(`SELECT * FROM recipes`, function(err, results){
+        db.query(`SELECT recipes.*, chefs.name AS author
+                FROM recipes
+                LEFT JOIN chefs ON (recipes.chef_id = chefs.id)`, function(err, results){
             if(err) throw `Database error: ${err}`
 
             callback(results.rows)
@@ -34,5 +39,15 @@ module.exports = {
 
             callback(results.rows)
         })
+    },
+
+
+    filters(callback) {
+        db.query(`SELECT * FROM recipes WHERE recipes.title ILIKE '%${filter}%'`, [filter], function(err, results){
+            if(err) throw `Database error: ${err}`
+
+            callback(results.rows)
+        })
+    
     }
 }
