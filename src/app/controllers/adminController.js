@@ -18,7 +18,9 @@ module.exports = {
     },
 
     create(req, res){
-        return res.render('admin/recipes/create')
+        Admin.chefOptions(function(options){
+            return res.render('admin/recipes/create', { chefOptions: options })
+        })
     },
 
     post(req, res){
@@ -37,7 +39,9 @@ module.exports = {
         Admin.showRecipe(req.params.id, function(recipe){
             if(!recipe) return res.send(`Recipe not found!`)
 
-            return res.render('admin/recipes/edit', { recipe })
+            Admin.chefOptions(function(options){
+                return res.render('admin/recipes/edit', { recipe, chefOptions: options })
+            })
         })
     },
 

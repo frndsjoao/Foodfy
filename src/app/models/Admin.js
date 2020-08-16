@@ -2,7 +2,9 @@ const db = require('../../config/db')
 
 module.exports = {
     all(callback){
-        db.query(`SELECT * FROM recipes`, function(err, results){
+        db.query(`SELECT recipes.*, chefs.name AS author
+            FROM recipes
+            LEFT JOIN chefs ON (recipes.chef_id = chefs.id)`, function(err, results){
             if(err) throw `Database error: ${err}`
 
             callback(results.rows)
@@ -10,7 +12,10 @@ module.exports = {
     },
     
     showRecipe(id, callback){
-        db.query(`SELECT * FROM recipes WHERE id = $1`, [id], function(err, results){
+        db.query(`SELECT recipes.*, chefs.name AS author
+                FROM recipes
+                LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+                WHERE recipes.id = $1`, [id], function(err, results){
             if(err) throw `Database error: ${err}`
 
             callback(results.rows[0])
@@ -31,7 +36,7 @@ module.exports = {
 
         const values = [
             data.title,
-            99,
+            data.chef,
             data.image,
             data.ingredients,
             data.preparation,
@@ -58,7 +63,7 @@ module.exports = {
 
         const values = [
             data.title,
-            data.author,
+            data.chef,
             data.image,
             data.ingredients,
             data.preparation,
@@ -78,6 +83,14 @@ module.exports = {
             if(err) throw `Database error: ${err}`
 
             callback()
+        })
+    },
+
+    chefOptions(callback){
+        db.query(`SELECT * FROM chefs`, function(err, results){
+            if (err) throw `Database error: ${err}`
+
+            callback(results.rows)
         })
     }
 }

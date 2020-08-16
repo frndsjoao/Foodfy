@@ -31,7 +31,7 @@ module.exports = {
     },
 
     show_recipes(id, callback){
-        db.query(`SELECT recipes.*
+        db.query(`SELECT *
                     FROM recipes 
                     WHERE recipes.chef_id = $1`,
             [id], function(err, results){

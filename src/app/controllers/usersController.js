@@ -3,6 +3,7 @@ const User = require('../models/User')
 
 module.exports = {
     home(req, res) {
+
         User.mainPage(function(recipes){
             return res.render('users/home', { recipes } )
         })
@@ -13,9 +14,19 @@ module.exports = {
     },
 
     recipes(req, res) {
-        User.recipePage(function(recipes){
-            return res.render('users/recipes', { recipes })
-        })
+
+        const  {filter} = req.query
+
+        if(filter){
+            User.findBy(filter, function(recipes){
+                return res.render('users/recipes', { recipes })
+
+            })
+        } else {
+            User.recipePage(function(recipes){
+                return res.render('users/recipes', { recipes })
+            })
+        }
     },
 
     showRecipe(req, res) {

@@ -14,15 +14,15 @@
     <div class="recipe-title" id="{{chef.id}}">
         <img id="chef-image" src="{{chef.avatar_url}}">
         <h1>{{chef.name}}</h1>
-        <p> {{recipes.total_recipes}} receitas</p>
+        <p> {{recipes | length}} receitas</p>
     </div>
 
     <section class="recipe-content">
         <h3>Receitas</h3>
-        <div class="recipe-info">
+    </section>
             
         <section class="admin__cards">
-        {% for recipe in recipes %}
+            {% for recipe in recipes %}
 
             <div class="admin__card" id="{{recipe.id}}">
                 <div class="admin-card_img">
@@ -40,12 +40,8 @@
                 </section>
             </div>
 
-        {% endfor %}
+            {% endfor %}
         </section>
-
-        </div>
-
-    </section>
 
 
 {% endblock %}

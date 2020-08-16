@@ -5,8 +5,10 @@
 
 <div class="recipe-author">
   <h3>Autor da receita</h3>
-  <div><select name="chef-name">
-    <option value="99">Autor Desconhecido</option>
+  <div><select name="chef">
+    {%for chef in chefOptions%}
+      <option value="{{chef.id}}" {%if recipe.chef_id == chef.id%} selected {%endif%}>{{chef.name}}</option>
+    {%endfor%}
   </select></div>
 </div>
 
