@@ -11,12 +11,18 @@
 
 
     <body>
-        <div class="header">
-            {% include "parts/header-admin.njk" %}
+        <div class="wrapper">
+            {% include "parts/header.njk" %}
+            {% block header %}
+            {% endblock header %}
         </div>
 
         {% block content %}
         {% endblock content %}
+
+        {% block footer %}
+        {% include "parts/footer.njk" %}
+        {% endblock footer %}
 
         <script src="/scripts.js"></script>
     </body>
