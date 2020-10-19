@@ -1,24 +1,23 @@
 {% extends 'admin/layout.njk' %}
 
 {% block head %}
-    <title>Admin Foodfy - New chef</title>
+    <title>Admin Foodfy - Novo Chef</title>
 {% endblock %}
 
 {% block content %}
 
+<main>
+    <section id="box">
+    <form action="/admin/chefs" method="POST" id="save_chef" enctype="multipart/form-data">
+        <div class="wrapper">
+            <h3>Criando chef</h3>
+            <button type="submit" onclick="Validates.allFields(event)">Salvar chef</button>
+        </div>
 
-    <form action="/admin/chefs" method="POST">
-      <div class="admin-title__show">
-          <h2 id="page-title__cards">Cadastrando Chef</h2>
-          <button type="submit">Salvar chef</button>
-      </div>
-
-      <section class="form-details">
-
-        {% include 'admin/chefs/chefs-fields.njk' %}
-      
-      </section>
+        {% include "./chefs-fields.njk" %}
+        
     </form>
-
+    </section>
+</main>
 
 {% endblock %}

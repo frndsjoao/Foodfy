@@ -1,24 +1,23 @@
 {% extends 'admin/layout.njk' %}
 
 {% block head %}
-    <title>Admin Foodfy - New recipe</title>
+    <title>Admin Foodfy - Nova Receita</title>
 {% endblock %}
 
 {% block content %}
 
+<main>
+    <section id="box">
+    <form action="/admin/recipes" method="POST" id="save_recipe" enctype="multipart/form-data">
+        <div class="wrapper">
+            <h3>Criando nova receita</h3>
+            <button type="submit" onclick="Validates.allFields(event)">Salvar receita</button>
+        </div>
 
-    <form action="/admin/recipes" method="POST">
-      <div class="admin-title__show">
-          <h2 id="page-title__cards">Criando receita</h2>
-          <button type="submit">Salvar receita</button>
-      </div>
-
-      <section class="form-details">
-
-        {% include 'admin/recipes/recipe-fields.njk' %}
-      
-      </section>
+        {% include "./recipe-fields.njk" %}
+        
     </form>
-
+    </section>
+</main>
 
 {% endblock %}
