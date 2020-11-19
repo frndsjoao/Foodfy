@@ -1,11 +1,11 @@
 # PROJETO LAUNCHBASE FOODFY
 
 <body>
-    <h4> Projeto realizado ao longo do curso LaunchBase da RocketSeat!
-</body>
-<br>
+    <h4> Projeto realizado ao longo do curso LaunchBase da RocketSeat! </h4>
+    <br>
+    <img width="1439" alt="Screenshot-Foodfy" src="https://user-images.githubusercontent.com/54087828/99724538-7fa45500-2a92-11eb-98f7-aacf84bf905d.png">
 
-<img width="1439" alt="Screenshot-Foodfy" src="https://user-images.githubusercontent.com/54087828/99724538-7fa45500-2a92-11eb-98f7-aacf84bf905d.png">
+</body>
 <br>
 
 ------
