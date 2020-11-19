@@ -1,27 +1,28 @@
-{% extends 'admin/layout.njk' %}
+{% extends 'model.njk' %}
+{% from 'admin/recipes/loadRecipes.njk' import loadRecipes %}
 
 {% block head %}
-    <title>Admin Foodfy - Receitas</title>
-{% endblock %}
+    <title>Listagem</title>
+{% endblock head %}
 
 {% block content %}
-
-<main>
     <section id="box">
-        <div class="wrapper">
+        <div class="wrapper" style="display: flex; justify-content: space-between">
             <h3>Gerenciar receitas</h3>
-            <a href="/admin/recipes/create"><button class="new-recipe">Nova receita</button></a>
+            {% if session.userId %}
+                <a href="/admin/recipes/create"><button class="new-recipe">Nova</button></a>
+            {% endif %}
         </div>
 
-        {% include "./layoutRecipes.njk" %}
-
+        {{ loadRecipes(recipes, files, '/admin/recipes/') }}
+        
         <div class="pagination"
             data-page = {{pagination.page}}
             data-total = {{pagination.total}}
-            data-limit = {{pagination.limit}}>
+            data-limit = {{pagination.limit}}
+            data-filter = {{filter}}
+        >
         </div>
-
     </section>
-</main>
 
-{% endblock %}
+{% endblock content %}

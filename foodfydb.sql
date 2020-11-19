@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS foodfy;
 CREATE DATABASE foodfy;
 
 CREATE TABLE "files" (
@@ -47,7 +48,7 @@ ALTER TABLE "chefs" ADD FOREIGN KEY ("file_id") REFERENCES "files" ("id");
 ALTER TABLE "recipes" ADD FOREIGN KEY("chef_id") REFERENCES "chefs" ("id");
 ALTER TABLE "recipe_files" ADD FOREIGN KEY ("file_id") REFERENCES "files" ("id");
 
--- create delete cascade
+-- CREATE DELETE CASCADE
 ALTER TABLE "recipes" DROP CONSTRAINT IF EXISTS recipes_user_id_fkey,
 ADD CONSTRAINT recipes_user_id_fkey
 FOREIGN KEY ("user_id") REFERENCES "users" ("id")
@@ -58,7 +59,7 @@ ADD CONSTRAINT recipe_files_recipe_id_fkey
 FOREIGN KEY ("recipe_id") REFERENCES "recipes" ("id") 
 ON DELETE CASCADE;
 
--- procedures
+-- PROCEDURES
 DROP TRIGGER IF EXISTS set_timestamp ON recipes;
 DROP TRIGGER IF EXISTS set_timestamp ON chefs;
 DROP TRIGGER IF EXISTS set_timestamp ON users;
@@ -72,25 +73,25 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
--- UPDATE timestamp recipes
+-- UPDATE TIMESTAMP (RECIPES)
 CREATE TRIGGER set_timestamp
 BEFORE UPDATE ON recipes
 FOR EACH ROW
 EXECUTE PROCEDURE trigger_set_timestamp();
 
--- UPDATE timestamp chefs
+-- UPDATE tTIMESTAMP (CHEFS)
 CREATE TRIGGER set_timestamp
 BEFORE UPDATE ON chefs
 FOR EACH ROW
 EXECUTE PROCEDURE trigger_set_timestamp();
 
--- UPDATE timestamp users
+-- UPDATE TIMESTAMP (USERS)
 CREATE TRIGGER set_timestamp
 BEFORE UPDATE ON users
 FOR EACH ROW
 EXECUTE PROCEDURE trigger_set_timestamp();
 
--- connect pg simple table
+-- PG SIMPLE TABLE
 CREATE TABLE "session" (
   "sid" varchar NOT NULL COLLATE "default",
 	"sess" json NOT NULL,
@@ -102,7 +103,7 @@ ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFE
 
 CREATE INDEX "IDX_session_expire" ON "session" ("expire");
 
--- restart to run seed.js
+-- RESTART seed.js
 DELETE FROM users;
 DELETE FROM recipes;
 DELETE FROM chefs;
@@ -110,7 +111,6 @@ DELETE FROM recipe_files;
 DELETE FROM files;
 DELETE FROM session;
 
--- restart sequence ids
 ALTER SEQUENCE users_id_seq RESTART WITH 1;
 ALTER SEQUENCE recipes_id_seq RESTART WITH 1;
 ALTER SEQUENCE chefs_id_seq RESTART WITH 1;

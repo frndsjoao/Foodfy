@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        {% block head %}
-            <title>Foodfy</title>
-        {% endblock %}
 
-        {% include "parts/link-imports.njk" %}
-    </head>
+<head>
+    {% block head %}
+    <title>Foodfy</title>
+    {% endblock %}
 
+    {% include 'parts/imports.njk' %}
+</head>
 
-    <body>
-        <div class="wrapper">
-            {% include "parts/header.njk" %}
-            {% block header %}
-            {% endblock header %}
-        </div>
+<body style="display: flex; flex-direction: column; height: 100%;">
+    {% include "parts/messages.njk" %}
+    <div class="wrapper">
+        {% include 'parts/header.njk' %}
+    {% block header %}
 
-        {% block content %}
-        {% endblock content %}
+    {% endblock header %}
+    </div>
 
-        {% block footer %}
-        {% include "parts/footer.njk" %}
-        {% endblock footer %}
+    {% block content %}
 
-        <script src="/scripts.js"></script>
-    </body>
+    {% endblock content %}
+    
+    {% block footer %}
+        {% include 'parts/footer.njk' %}
+    {% endblock footer %}
+
+    <script src="/scripts.js"></script>
+</body>
+
 </html>
